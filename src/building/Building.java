@@ -14,27 +14,22 @@ public abstract class Building {
     private CleanlinessLevel cleanlinessLevel;
     private List<Character> presentCharacters;
 
-    public Building(List<Character> presentCharacters, CleanlinessLevel cleanlinessLevel, String name, int capacity, double area) {
+    public Building(String name, double area, int capacity) {
         if (area < 0) {
             throw new IllegalArgumentException("La superficie ne peut pas etre negative.");
         }
         if (capacity < 0) {
             throw new IllegalArgumentException("La capacite ne peut pas etre negative.");
         }
-        this.presentCharacters = new ArrayList<>(presentCharacters);
+        this.presentCharacters = new ArrayList<>();
         this.cleanlinessLevel = CleanlinessLevel.GOOD;
         this.name = name;
-        this.capacity = capacity;
         this.area = area;
+        this.capacity = capacity;
     }
 
-    protected boolean canWelcome(Character character) {
-        return acceptsType(character);
-    }
-
-    protected boolean acceptsType(Character character) {
-        return true;
-    }
+    protected abstract boolean acceptsType(Character character);
+    protected abstract boolean canWelcome(Character character);
 
     protected boolean compatibleWithOccupants(Character character) {
         return true;
