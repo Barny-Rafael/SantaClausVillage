@@ -2,13 +2,16 @@
  * Le Père Noël : il n'en existe qu'un seul (singleton).
  */
 public final class SantaClaus {
-    private static final SantaClaus INSTANCE = new SantaClaus();
+    private static final SantaClaus instance = new SantaClaus();
 
     private SantaClaus() {
     }
 
     public static SantaClaus getInstance() {
-        return INSTANCE;
+        if (instance == null) {
+            instance = new SantaClaus();
+        }
+        return instance;
     }
 
     /**
