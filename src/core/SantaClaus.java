@@ -2,7 +2,7 @@
  * Le Père Noël : il n'en existe qu'un seul (singleton).
  */
 public final class SantaClaus {
-    private static final SantaClaus instance = new SantaClaus();
+    private static SantaClaus instance;
 
     private SantaClaus() {
     }
@@ -35,7 +35,7 @@ public final class SantaClaus {
      */
     public void transferCharacter(Character c, Building source, Building destination) {
         if (source.characters.contains(c) && destination.accommodate(c)) {
-            source.characters.remove(c);
+            source.characters.withdraw(c);
             c.move();
         }
     }
