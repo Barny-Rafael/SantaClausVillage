@@ -39,11 +39,11 @@ public abstract class Character implements Noise {
         this.christmasMagic += amount;
     }
 
-    public String getNom() {
+    public String getName() {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setName(String nom) {
         this.nom = nom;
     }
 
