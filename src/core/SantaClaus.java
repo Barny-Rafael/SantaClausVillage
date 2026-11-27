@@ -33,10 +33,7 @@ public final class SantaClaus {
     /**
      * Transfère un personnage d'un bâtiment à un autre, si la destination l'accepte.
      */
-    public void transferCharacter(Character c, Building source, Building destination) {
-        if (source.characters.contains(c) && destination.accommodate(c)) {
-            source.characters.withdraw(c);
-            c.move();
-        }
+    public void transferCharacter(Character c, Building destination) {
+        c.move(destination);
     }
 }
