@@ -1,4 +1,20 @@
 package character.humanoid;
 
-public class PostalElf {
+import enumeration.Gender;
+import interfaces.Work;
+
+public final class PostalElf extends Humanoid implements Work {
+    public PostalElf(String nom, Gender gender, int age) {
+        super(nom, gender, age);
+    }
+
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void work() {
+        updateMagic(10);
+    }
 }
