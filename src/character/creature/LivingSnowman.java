@@ -12,11 +12,6 @@ public final class LivingSnowman extends Creature implements SupernaturalBeing {
     }
 
     @Override
-    public void move() {
-
-    }
-
-    @Override
     public void behaveAsSupernaturalBeing() {
         updateMagic(10);
     }

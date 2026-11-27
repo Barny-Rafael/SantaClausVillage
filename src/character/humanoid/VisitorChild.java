@@ -9,11 +9,6 @@ public final class VisitorChild extends Humanoid implements Fun {
     }
 
     @Override
-    public void move() {
-
-    }
-
-    @Override
     public void haveFun() {
         updateMagic(10);
     }

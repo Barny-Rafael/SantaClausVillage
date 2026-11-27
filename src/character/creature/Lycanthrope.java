@@ -9,11 +9,6 @@ public final class Lycanthrope extends Creature implements SupernaturalBeing {
     }
 
     @Override
-    public void move() {
-
-    }
-
-    @Override
     public void behaveAsSupernaturalBeing() {
         updateMagic(10);
     }

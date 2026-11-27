@@ -10,11 +10,6 @@ public final class ChristmasFairy extends Humanoid implements SupernaturalBeing,
     }
 
     @Override
-    public void move() {
-
-    }
-
-    @Override
     public void behaveAsSupernaturalBeing() {
         updateMagic(10);
     }

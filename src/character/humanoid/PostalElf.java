@@ -9,11 +9,6 @@ public final class PostalElf extends Humanoid implements Work {
     }
 
     @Override
-    public void move() {
-
-    }
-
-    @Override
     public void work() {
         updateMagic(10);
     }
