@@ -1,4 +1,5 @@
 package interfaces;
 
-public interface Soundable {
+interface Soundable {
+    public void makeNoise();
 }

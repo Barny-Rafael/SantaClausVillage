@@ -1,4 +1,5 @@
 package interfaces;
 
-public interface FantasticBehavior {
+interface FantasticBehavior {
+    public void behaveAsCreature();
 }
