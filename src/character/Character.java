@@ -1,16 +1,18 @@
 package character;
 
+import building.Building;
 import enumeration.Gender;
 import interfaces.Noise;
 import food.Food;
 
 public abstract class Character implements Noise {
-    protected String nom;
-    protected Gender gender;
+    protected final String nom;
+    protected final Gender gender;
     protected int age;
     protected int hunger;
     protected boolean resting;
     protected int christmasMagic;
+    protected Building currentBuilding;
 
     public Character(String nom, Gender gender, int age) {
         this.nom = nom;
@@ -21,7 +23,16 @@ public abstract class Character implements Noise {
         this.christmasMagic = 0;
     }
 
-    public abstract void move();
+    public void move(Building building) {
+        try {
+            currentBuilding.withdraw(this);
+            this.currentBuilding = null;
+            building.add(this);
+            this.currentBuilding = building;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public void makeNoise(String noise) {
         System.out.println(noise);
@@ -43,32 +54,16 @@ public abstract class Character implements Noise {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
     public Gender getGender() {
         return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getHunger() {
         return hunger;
-    }
-
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
     }
 
     public boolean isResting() {
@@ -79,7 +74,7 @@ public abstract class Character implements Noise {
         return christmasMagic;
     }
 
-    public void setChristmasMagic(int christmasMagic) {
-        this.christmasMagic = christmasMagic;
+    public Building getCurrentBuilding() {
+        return currentBuilding;
     }
 }

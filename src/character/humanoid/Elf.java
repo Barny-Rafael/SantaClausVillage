@@ -14,11 +14,6 @@ public final class Elf extends Humanoid implements SupernaturalBeing, Work, Fun 
     }
 
     @Override
-    public void move() {
-
-    }
-
-    @Override
     public void behaveAsSupernaturalBeing() {
         updateMagic(10);
     }
